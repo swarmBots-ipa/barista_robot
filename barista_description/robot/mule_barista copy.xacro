@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+  
+<robot name="barista" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:arg name="robot_name" default="barista_X"/>
+  <xacro:property name="robot_name_prop" value="$(arg robot_name)"/>
+
+  <xacro:include filename="$(find barista_description)/robot/common_properties.xacro"/>
+  <xacro:include filename="$(find barista_description)/robot/barista_properties.xacro"/>
+  <!-- Bases -->
+  <xacro:include filename="$(find barista_description)/robot/barista_kobuki.xacro" />
+  <!-- Stacks -->
+  <xacro:include filename="$(find barista_description)/robot/barista_hexagons.xacro"/>
+
+  <xacro:include filename="$(find barista_description)/robot/barista_mod.xacro" />
+  <xacro:include filename="$(find barista_description)/robot/barista_hokuyo.xacro" />
+  
+  <xacro:barista_kobuki robot_name="$(arg robot_name)"/>  
+
+  <xacro:if value="${'barista' in robot_name_prop}">
+    <xacro:stack_hexagons parent="base_link"/>
+    <xacro:barista_mod  bottom_parent="plate_middle_link" top_parent="plate_top_link"/>
+  </xacro:if>
+
+  <xacro:if value="${'mule' in robot_name_prop}">
+    <xacro:stack_hexagons_mule parent="base_link"/>
+    <xacro:barista_mod_mule  bottom_parent="plate_middle_link" top_parent="plate_middle_link"/>
+  </xacro:if>
+
+  
+  <xacro:barista_hokuyo  parent="plate_middle_link" x_hok="0.116647" y_hok="0.0" z_hok="0.045" robot_name="$(arg robot_name)"/>
+  
+</robot>

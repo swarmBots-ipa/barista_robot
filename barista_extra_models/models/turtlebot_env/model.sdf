@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<sdf version="1.6">
+  <model name="turtlebot_env">
+    <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+    <static>true</static>
+    
+    <link name="bartender_main_link">
+      <pose>0.0 0.0 0.05 0.0 0.0 0.0</pose>
+
+
+      <collision name="collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://turtlebot_env/meshes/turtlebot_env_col.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+
+      <visual name="visual_walls">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://turtlebot_env/meshes/turtlebot_env_HD.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+
+    </link>
+
+  </model>
+</sdf>

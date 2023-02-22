@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+    - Base      : kobuki
+    - Stacks    : hexagons
+    - 3d Sensor : kinect
+-->    
+<robot name="turtlebot" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:arg name="robot_name" default="robot"/>
+
+  <xacro:include filename="$(find turtlebot_description)/urdf/common_properties.urdf.xacro"/>
+  <xacro:include filename="$(find turtlebot_description)/urdf/turtlebot_properties.urdf.xacro"/>
+  <!-- Bases -->
+  <xacro:include filename="$(find turtlebot_description)/urdf/barista/barista_kobuki.urdf.xacro" />
+  <!-- Stacks -->
+  <xacro:include filename="$(find turtlebot_description)/urdf/barista/barista_hexagons.urdf.xacro"/>
+  <!-- 3D Sensors -->
+  <!-- Barista doesnt have XTion Sensor -->
+  <!--<xacro:include filename="$(find kobuki_description)/urdf/sensors/asus_xtion_pro.urdf.xacro"/>-->
+  <!-- Barista Mods -->
+  <xacro:include filename="$(find turtlebot_description)/urdf/barista/barista_mod.urdf.xacro" />
+  <xacro:include filename="$(find turtlebot_description)/urdf/barista/barista_hokuyo.urdf.xacro" />
+  
+  <xacro:barista_kobuki/>
+  <xacro:stack_hexagons parent="base_link"/>
+  <!-- Barista doesnt have XTion Sensor -->
+  <!--<sensor_asus_xtion_pro parent="base_link"/>-->
+  <xacro:barista_mod  bottom_parent="plate_middle_link" top_parent="plate_top_link"/>
+  <xacro:barista_hokuyo  parent="plate_middle_link" x_hok="0.116647" y_hok="0.0" z_hok="0.045" robot_name="$(arg robot_name)"/>
+  
+</robot>

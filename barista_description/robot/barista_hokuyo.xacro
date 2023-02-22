@@ -1,0 +1,86 @@
+<?xml version="1.0" ?>
+<!-- 
+  This is not a standalone urdf for kobuki. It simply defines the 'kobuki' tag that can
+  be incorporated by other urdf files (e.g. turtlebot).
+  
+  See kobuki_standalone.urdf.xacro for a standalone urdf to be tested with
+      kobuki_description/launch/view_model.launch
+ -->
+<robot name="hokuyo" xmlns:xacro="http://ros.org/wiki/xacro">
+  
+  <xacro:macro name="barista_hokuyo" params="parent x_hok y_hok z_hok robot_name">
+    
+    <link name="laser_sensor_link">
+	    <inertial>
+		    <mass value="1e-5"/>
+		    <origin xyz="0 0 0" rpy="0 0 0"/>
+		    <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
+	    </inertial>
+	    <collision>
+		    <origin xyz="0 0 0" rpy="0 0 0"/>
+		    <geometry>
+			    <box size="0.1 0.1 0.1"/>
+		    </geometry>
+	    </collision>
+	    <visual>
+		    <origin xyz="0 0 0" rpy="0 0 0"/>
+		    <geometry>
+			    <mesh filename="package://barista_description/meshes/turtlebot/sensors/hokuyo.dae"/>
+		    </geometry>
+	    </visual>
+    </link>
+    
+    <joint name="laser_sensor_joint" type="fixed">
+    	<origin xyz="${x_hok} ${y_hok} ${z_hok}" rpy="0 0 0"/>
+    	<parent link="${parent}"/>
+    	<child link="laser_sensor_link"/>
+    </joint>
+    
+    
+    <gazebo reference="laser_sensor_link">
+  		<sensor name="lidar" type="ray">
+			<always_on>true</always_on>
+			<visualize>false</visualize>
+			<update_rate>20</update_rate>
+			<ray>
+				<scan>
+					<horizontal>
+					<samples>128</samples>
+					<resolution>1.000000</resolution>
+					<min_angle>0.000000</min_angle>
+					<max_angle>6.280000</max_angle>
+					</horizontal>
+				</scan>
+				<range>
+					<min>0.120000</min>
+					<max>3.5</max>
+					<resolution>0.015000</resolution>
+				</range>
+				<noise>
+					<type>gaussian</type>
+					<mean>0.0</mean>
+					<stddev>0.01</stddev>
+				</noise>
+			</ray>
+			<plugin name="scan" filename="libgazebo_ros_ray_sensor.so">
+				<ros>
+					<namespace>${robot_name}</namespace>
+					<remapping>~/out:=scan</remapping>
+				</ros>
+				<output_type>sensor_msgs/LaserScan</output_type>
+				<frame_name>${robot_name}/laser_sensor_link</frame_name>
+			</plugin>
+			
+		</sensor>
+  	</gazebo>
+
+	
+
+
+
+  	
+  </xacro:macro>
+  
+  
+  
+</robot>

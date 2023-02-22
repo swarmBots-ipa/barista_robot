@@ -1,0 +1,13 @@
+<?xml version='1.0' ?>
+<launch>
+
+  
+  <include file="$(find-pkg-share barista_gazebo)/launch/start_sim_battery.launch.xml">
+    <arg name="barista_name" value="barista_1"/>
+  </include>
+  <include file="$(find-pkg-share barista_gazebo)/launch/start_sim_battery.launch.xml">
+    <arg name="barista_name" value="barista_2"/>
+  </include>
+
+
+</launch>

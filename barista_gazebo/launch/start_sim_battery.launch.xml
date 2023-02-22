@@ -1,0 +1,9 @@
+<launch>
+
+    <arg name="barista_name" default="barista_X"/>
+
+    <node pkg="barista_gazebo" exec="battery_state_sim_barista_v2.py" name="$(var barista_name)_battery_state_node">
+        <param name="barista_name" value="$(var barista_name)"/>
+    </node>
+
+</launch>

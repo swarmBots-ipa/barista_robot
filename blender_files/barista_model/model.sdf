@@ -1,0 +1,116 @@
+<?xml version="1.0" ?>
+<sdf version="1.8">
+  <model name="test">
+    <link name="testlink">
+      <visual name="TOP">
+        <geometry>
+          <mesh>
+            <uri>model.dae</uri>
+            <submesh>
+              <name>TOP</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1.0 1.0 1.0 1.0</diffuse>
+          <specular>0.0 0.0 0.0 1.0</specular>
+          <pbr>
+            <metal/>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="Cube">
+        <geometry>
+          <mesh>
+            <uri>model.dae</uri>
+            <submesh>
+              <name>Cube</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1.0 1.0 1.0 1.0</diffuse>
+          <specular>0.0 0.0 0.0 1.0</specular>
+          <pbr>
+            <metal/>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="BOTTOM">
+        <geometry>
+          <mesh>
+            <uri>model.dae</uri>
+            <submesh>
+              <name>BOTTOM</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1.0 1.0 1.0 1.0</diffuse>
+          <specular>0.0 0.0 0.0 1.0</specular>
+          <pbr>
+            <metal/>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="main_body">
+        <geometry>
+          <mesh>
+            <uri>model.dae</uri>
+            <submesh>
+              <name>main_body</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1.0 1.0 1.0 1.0</diffuse>
+          <specular>0.0 0.0 0.0 1.0</specular>
+          <pbr>
+            <metal>
+              <albedo_map>meshes/main_body.jpg</albedo_map>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      <visual name="Mesh_001">
+        <geometry>
+          <mesh>
+            <uri>model.dae</uri>
+            <submesh>
+              <name>Mesh_001</name>
+            </submesh>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1.0 1.0 1.0 1.0</diffuse>
+          <specular>0.0 0.0 0.0 1.0</specular>
+          <pbr>
+            <metal/>
+          </pbr>
+        </material>
+      </visual>
+      <light name="Lamp" type="point">
+        <diffuse>1.0 1.0 1.0 1.0</diffuse>
+        <attenuation>
+          <range>40.0</range>
+          <linear>0.0</linear>
+          <quadratic>0.0</quadratic>
+          <constant>1.0</constant>
+        </attenuation>
+        <cast_shadows>true</cast_shadows>
+        <intensity>1.0</intensity>
+      </light>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model.dae</uri>
+          </mesh>
+        </geometry>
+        <surface/>
+        <contact/>
+        <collide_bitmask>0x01</collide_bitmask>
+      </collision>
+    </link>
+  </model>
+  <static>true</static>
+</sdf>

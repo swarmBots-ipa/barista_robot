@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+
+<sdf version="1.6">
+  <model name="table_ingestor">
+    <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+    <static>true</static>
+    
+    <link name="bartender_main_link">
+      <pose>0.0 0.0 0.05 0.0 0.0 0.0</pose>
+
+
+      <collision name="collision">
+        <pose>0 0 0.733276 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.737096 0.810806 0.07371</size>
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://table_ingestor/meshes/voxeltable_nolegs.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+     <plugin name="teleport_ingestor" filename="libteleport_ingestor.so">
+    </plugin>
+
+  </model>
+</sdf>

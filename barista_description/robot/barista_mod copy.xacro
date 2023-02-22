@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<!--
+  Hexagon stacks
+ -->
+<robot name="stack_hexagons" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find barista_description)/robot/turtlebot/common_properties.urdf.xacro"/>
+  
+  <xacro:macro name="barista_mod" params="bottom_parent top_parent ">
+    
+    <link name="barista_top_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <xacro:if value="${robot_name_prop == 'barista_1'}">
+            <mesh filename="package://barista_description/meshes/barista/TOP_colour_1.dae"/>
+          </xacro:if>
+          <xacro:if value="${robot_name_prop == 'barista_2'}">
+            <mesh filename="package://barista_description/meshes/barista/TOP_colour_2.dae"/>
+          </xacro:if>
+          <xacro:if value="${robot_name_prop != 'barista_1' and robot_name_prop != 'barista_2'}">
+            <mesh filename="package://barista_description/meshes/barista/TOP_colour.dae"/>
+          </xacro:if>          
+        </geometry>
+      </visual>  
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>        
+          <mesh filename="package://barista_description/meshes/barista/TOP_collision_lip.stl"/>
+          <!-- <cylinder length="0.085" radius="0.1760015"/> -->
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="0.1" />
+        <origin xyz="0 0 0" />
+        <inertia ixx="0.00083462153339" ixy="0.0" ixz="0.0"
+                 iyy="0.00083462153339" iyz="0.0"
+                 izz="0.00154882640011" />
+      </inertial>
+    </link>
+    
+    <joint name="barista_top_joint" type="fixed">
+      <origin xyz="-0.01364 0.0  0.3966" rpy="0 0 0"/>
+      <parent link="${top_parent}"/>
+      <child link="barista_top_link"/>
+    </joint>
+    
+     
+    <link name="barista_bottom_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <xacro:if value="${robot_name_prop == 'barista_1'}">
+            <mesh filename="package://barista_description/meshes/barista/BOTTOM_colour_1.dae"/>
+          </xacro:if>
+          <xacro:if value="${robot_name_prop == 'barista_2'}">
+            <mesh filename="package://barista_description/meshes/barista/BOTTOM_colour_2.dae"/>
+          </xacro:if>
+          <xacro:if value="${robot_name_prop != 'barista_1' and robot_name_prop != 'barista_2'}">
+            <mesh filename="package://barista_description/meshes/barista/BOTTOM_colour.dae"/>
+          </xacro:if>          
+        </geometry>
+      </visual>  
+      <collision>
+        <origin xyz="0 0 -0.07" rpy="0 0 0"/>
+        <geometry>
+          <cylinder length="0.14" radius="0.1760015"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="0.1" />
+        <origin xyz="0 0 0" />
+        <inertia ixx="0.00093774653339" ixy="0.0" ixz="0.0"
+                 iyy="0.00093774653339" iyz="0.0"
+                 izz="0.00154882640011" />
+      </inertial>  
+    </link>
+    
+    
+    <joint name="barista_bottom_joint" type="fixed">
+      <origin xyz="-0.00364 0.0 0.1874" rpy="0 0 0"/>
+      <parent link="${bottom_parent}"/>
+      <child link="barista_bottom_link"/>
+    </joint> 
+    
+    
+    
+    
+    
+  </xacro:macro>
+
+
+  <!-- Mule Related -->
+  <xacro:macro name="barista_mod_mule" params="bottom_parent top_parent">
+    
+    <link name="barista_top_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://barista_description/meshes/barista/TOP_mule.dae"/>
+        </geometry>
+      </visual>  
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://barista_description/meshes/barista/TOP_mule_col.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="0.1" />
+        <origin xyz="0 0 0" />
+        <inertia ixx="0.00083462153339" ixy="0.0" ixz="0.0"
+                 iyy="0.00083462153339" iyz="0.0"
+                 izz="0.00154882640011" />
+      </inertial>
+    </link>
+    
+    <joint name="barista_top_joint" type="fixed">
+      <origin xyz="0.00364 0.0 0.3966" rpy="0 0 0"/>
+      <parent link="${top_parent}"/>
+      <child link="barista_top_link"/>
+    </joint>
+    
+     
+    <link name="barista_bottom_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://barista_description/meshes/barista/BOTTOM_mule.dae"/>
+        </geometry>
+      </visual>  
+      <collision>
+        <origin xyz="0 0 -0.07" rpy="0 0 0"/>
+        <geometry>
+          <cylinder length="0.14" radius="0.1760015"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="0.1" />
+        <origin xyz="0 0 0" />
+        <inertia ixx="0.00093774653339" ixy="0.0" ixz="0.0"
+                 iyy="0.00093774653339" iyz="0.0"
+                 izz="0.00154882640011" />
+      </inertial>  
+    </link>
+    
+    
+    <joint name="barista_bottom_joint" type="fixed">
+      <origin xyz="-0.00364 0.0 0.1874" rpy="0 0 0"/>
+      <parent link="${bottom_parent}"/>
+      <child link="barista_bottom_link"/>
+    </joint> 
+    
+    
+  </xacro:macro>
+
+</robot>

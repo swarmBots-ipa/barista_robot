@@ -1,0 +1,317 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+
+  <world name="default">
+
+    <gui fullscreen='0'>
+      <camera name="camera">
+        <pose>3.82742 3.47421 10.5983 0 1.07564 3.13136</pose>
+      </camera>
+    </gui>
+
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+
+    
+    <model name="room">
+      <pose>-4 -1 0  0 0 0</pose>
+      <static>true</static>
+      <link name="room">
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>model://../models/coffeeshop/meshes/coffeeshop.dae</uri></mesh>
+          </geometry>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <mesh><uri>model://../models/coffeeshop/meshes/coffeeshop.dae</uri></mesh>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <model name="table_1">
+      <pose>0.933835 6.90964 0 -0.000137 0.021121 3.1351</pose>
+      <static>true</static>
+      <link name="table_1">
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>model://../models/coffee_table/meshes/coffee_table.dae</uri></mesh>
+          </geometry>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <mesh><uri>model://../models/coffee_table/meshes/coffee_table.dae</uri></mesh>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <model name="table_2">
+      <pose>0.086658 2.88528 0 0 -0 0</pose>
+      <static>true</static>
+      <link name="table_2">
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>model://../models/round_table/meshes/round_table.dae</uri></mesh>
+          </geometry>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <mesh><uri>model://../models/round_table/meshes/round_table.dae</uri></mesh>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <model name="table_3">
+      <pose>-3.03222 5.81746 0 0 -0 0</pose>
+      <static>true</static>
+      <link name="table_3">
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>model://../models/round_table/meshes/round_table.dae</uri></mesh>
+          </geometry>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <mesh><uri>model://../models/round_table/meshes/round_table.dae</uri></mesh>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <model name="chair_1">
+      <pose>0.415631 4.13265 0 0 -0 0</pose>
+      <static>true</static>
+      <link name="chair_1">
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>model://../models/chair/meshes/chair.dae</uri></mesh>
+          </geometry>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <mesh><uri>model://../models/chair/meshes/chair.dae</uri></mesh>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <model name="chair_2">
+      <pose>0.195553 2.88107 0 0 -0 1.94154</pose>
+      <static>true</static>
+      <link name="chair_2">
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>model://../models/chair/meshes/chair.dae</uri></mesh>
+          </geometry>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <mesh><uri>model://../models/chair/meshes/chair.dae</uri></mesh>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <model name="chair_3">
+      <pose>-2.09814 6.95682 0 0 0 -0.970737</pose>
+      <static>true</static>
+      <link name="chair_3">
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>model://../models/chair/meshes/chair.dae</uri></mesh>
+          </geometry>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <mesh><uri>model://../models/chair/meshes/chair.dae</uri></mesh>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <model name="chair_5">
+      <pose>-2.40349 5.75729 0 0 -0 2.87433</pose>
+      <static>true</static>
+      <link name="chair_5">
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>model://../models/chair/meshes/chair.dae</uri></mesh>
+          </geometry>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <mesh><uri>model://../models/chair/meshes/chair.dae</uri></mesh>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <model name="chair_6">
+      <pose>-3.08249 6.74925 0 0 -0 0.775975</pose>
+      <static>true</static>
+      <link name="chair_6">
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>model://../models/chair/meshes/chair.dae</uri></mesh>
+          </geometry>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <mesh><uri>model://../models/chair/meshes/chair.dae</uri></mesh>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <model name="chair_8">
+      <pose>1.37054 3.19411 0 0 0 -2.51626</pose>
+      <static>true</static>
+      <link name="chair_8">
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>model://../models/chair/meshes/chair.dae</uri></mesh>
+          </geometry>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <mesh><uri>model://../models/chair/meshes/chair.dae</uri></mesh>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <model name="armchair_1">
+      <pose>1.17712 6.4131 0 0 -0 0.011959</pose>
+      <static>true</static>
+      <link name="armchair_1">
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>model://../models/armchair/meshes/armchair.dae</uri></mesh>
+          </geometry>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <mesh><uri>model://../models/armchair/meshes/armchair.dae</uri></mesh>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <model name="armchair_2">
+      <pose>-0.052948 6.96436 0 0 -0 1.57556</pose>
+      <static>true</static>
+      <link name="armchair_2">
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>model://../models/armchair/meshes/armchair.dae</uri></mesh>
+          </geometry>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <mesh><uri>model://../models/armchair/meshes/armchair.dae</uri></mesh>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <model name="counter">
+      <pose>-1.86844 0.463033 0 0 -0 1.56655</pose>
+      <static>true</static>
+      <link name="counter">
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>model://../models/condiment/meshes/condiment.dae</uri></mesh>
+          </geometry>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <mesh><uri>model://../models/armchair/meshes/armchair.dae</uri></mesh>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    
+    <model name="poster_1">
+      <pose>-3.8042 0.424181 1.47474 1.57 0.008932 1.57</pose>
+      <static>true</static>
+      <link name="poster_1">
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>model://../models/dashed_picture/meshes/dashed_picture.dae</uri></mesh>
+          </geometry>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <mesh><uri>model://../models/dashed_picture/meshes/dashed_picture.dae</uri></mesh>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <model name="poster_2">
+      <pose>-3.78389 0.423598 0.639337 1.57 0 1.57</pose>
+      <static>true</static>
+      <link name="poster_2">
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>model://../models/dashed_picture/meshes/dashed_picture.dae</uri></mesh>
+          </geometry>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <mesh><uri>model://../models/dashed_picture/meshes/dashed_picture.dae</uri></mesh>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+
+    <model name="poster_3">
+      <pose>-3.79781 1.00553 0.641234 1.57 0 1.57</pose>
+      <static>true</static>
+      <link name="poster_3">
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>model://../models/dashed_picture/meshes/dashed_picture.dae</uri></mesh>
+          </geometry>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <mesh><uri>model://../models/dashed_picture/meshes/dashed_picture.dae</uri></mesh>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+
+    <model name="poster_4">
+      <pose>-3.79781 1.00553 1.47474 1.57 0 1.57</pose>
+      <static>true</static>
+      <link name="poster_4">
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>model://../models/dashed_picture/meshes/dashed_picture.dae</uri></mesh>
+          </geometry>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <mesh><uri>model://../models/dashed_picture/meshes/dashed_picture.dae</uri></mesh>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+    <!-- <plugin name="gazebo_ros_control" filename="libgazebo_ros_api_plugin.so"/> -->
+
+  </world>
+
+</sdf>
